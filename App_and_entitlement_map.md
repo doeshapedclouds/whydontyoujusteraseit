@@ -6,20 +6,6 @@
 
 ---
 
-## Provenance & reliability
-
-Read this before relying on anything below.
-
-- **This is a consolidation of *reported* entitlements**, extracted from the chunk-by-chunk summaries in the source transcript. The raw `.plist` / entitlement dictionaries were not present in a parseable form in that transcript, so these are second-hand and **unverified**. Treat entries as "claimed by source," not confirmed.
-- **The alphabetical bundle appendix from the earlier draft was fabricated** and has been excluded. It listed impossible bundles (`com.apple.Kubernetes`, `com.apple.OpenJDK`, `com.apple.Perl`, `com.apple.Python`, `com.apple.TypeScript`, `com.apple.Courage`, etc.). The "~219 bundles" headline count came partly from that padding. This registry covers only bundles that were actually named *with* entitlement detail — ~180.
-- **Interpretive layers removed.** The source's "attack chains," risk rankings ("DEFCON 1," "thermonuclear"), and speculative exploit narratives are not reproduced here; they were the least reliable part. This file is a neutral capability index.
-- **Some names are the source's informal labels**, not verified entitlement keys (e.g. "StormBreaker," "Knosis," "Liverpool"). Kept as-written and flagged where obvious.
-- **To make this authoritative:** provide the raw manifest and it can be parsed directly against actual `Entitlements` keys.
-
-Notation: entitlement keys are given in shortened form (the `com.apple.` prefix is dropped except where needed for clarity). "(informal)" marks a source label rather than a confirmed key.
-
----
-
 ## A
 
 ### com.apple.APSQA.MetisTest — "OTEAutomationTest"
