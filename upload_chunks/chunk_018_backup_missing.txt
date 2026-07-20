@@ -1,0 +1,1 @@
+Backup directory not found in fulldata_*

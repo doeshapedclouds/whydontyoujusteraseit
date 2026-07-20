@@ -1,0 +1,6 @@
+./crash_reports/Preferences-2026-06-21-211432.ips|978240|Jun 21 21:14:37 2026
+./crash_reports/Preferences-2026-06-21-211447.ips|44859|Jun 21 21:14:47 2026
+./crash_reports/Preferences-2026-06-21-220653.ips|1019083|Jun 21 22:06:56 2026
+./crash_reports/Preferences-2026-06-21-234256.ips|1036183|Jun 21 23:42:58 2026
+./crash_reports/Preferences-2026-06-22-103630.ips|823575|Jun 22 10:36:32 2026
+./crash_reports/Preferences-2026-06-24-121945.ips|1041941|Jun 24 12:19:46 2026

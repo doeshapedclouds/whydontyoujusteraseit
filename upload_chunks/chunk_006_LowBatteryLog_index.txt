@@ -1,0 +1,3 @@
+./crash_reports/LowBatteryLog-2026-06-25-222553.ips|81610|Jun 25 22:25:53 2026
+./crash_reports/LowBatteryLog-2026-06-29-185853.ips|80850|Jun 29 18:58:53 2026
+./crash_reports/LowBatteryLog-2026-07-05-041307.ips|70189|Jul  5 04:13:07 2026

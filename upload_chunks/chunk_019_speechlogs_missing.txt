@@ -1,0 +1,1 @@
+Assistant/SpeechLogs directory not found

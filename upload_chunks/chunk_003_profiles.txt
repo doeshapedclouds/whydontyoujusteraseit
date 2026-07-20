@@ -1,0 +1,23 @@
+/Users/aadmin/Movies/iphone/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+{
+    "OrderedIdentifiers": [
+        "doeshapedclouds.ios.supervised.7F2C1A90-0000-4A21-9C01-5E2D1C3B0000"
+    ],
+    "ProfileManifest": {
+        "doeshapedclouds.ios.supervised.7F2C1A90-0000-4A21-9C01-5E2D1C3B0000": {
+            "Description": "doeshapedclouds config (supervised v5-NOASSET \u2014 TTS/voice/parsecd net-kill + camera-app-only)",
+            "IsActive": true
+        }
+    },
+    "ProfileMetadata": {
+        "doeshapedclouds.ios.supervised.7F2C1A90-0000-4A21-9C01-5E2D1C3B0000": {
+            "PayloadDescription": "SUPERVISED iPhone v3: NO app hiding (nothing hidden in App Library) \u2014 lockdown by CAPABILITY: camera ON, iMessage/FaceTime off, AirDrop/Bluetooth/Find My/account/erase/in-app-purchase/install locks, iCloud sync off, Apple Intelligence off, DoT DNS. allowHostPairing intentionally OMITTED (kept manageable; USB Restricted Mode retained). Push via pymobiledevice3 with the supervision keybag after supervising + installing apps.",
+            "PayloadDisplayName": "doeshapedclouds config (supervised v5-NOASSET \u2014 TTS/voice/parsecd net-kill + camera-app-only)",
+            "PayloadRemovalDisallowed": true,
+            "PayloadUUID": "7F2C1A90-0000-4A21-9C01-5E2D1C3B0000",
+            "PayloadVersion": 1
+        }
+    },
+    "Status": "Acknowledged"
+}
