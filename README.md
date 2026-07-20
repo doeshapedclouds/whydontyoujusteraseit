@@ -55,29 +55,15 @@ iOS Developers	Entitlement scope creep; least-privilege violations in system app
 Privacy Advocates	Background surveillance capabilities; permission visibility leaks
 Apple Engineers	Attack surface review; entitlement minimization opportunities
 
-
-Methodology Snapshot (**Currently, this is only a breakdown of the First Chunk & Manifest.plist
-
-Chunked Parsing — Manifest split into 20 parts (~219 bundles total)
-Entitlement Extraction — Every privilege flag, keychain group, Mach service logged
-Risk Scoring — Tiered classification (Tier 0-4) based on impact severity
-Dependency Mapping — Service-to-service relationships visualized
-Cross-Correlation — Entitlements cross-referenced against known CVEs and vulnerability registries
-
 Limitations & Disclaimers
-⚠️ Internal Build Data — This manifest is from an iOS 26.5 internal/beta build. Entitlements may differ in production releases.
+
+⚠️ This Contains artifacts meant to be used on internal builds. But I find it on my iPhone. that ive never logged into iCloud. Or connected to bluetooth.
 
 ⚠️ Static Analysis Only — No dynamic testing performed. Actual exploit feasibility requires runtime validation.
 
 ⚠️ No Harmful Code Provided — This is research documentation only. No exploit payloads included.
 
-⚠️ Responsible Disclosure — If you're an Apple engineer and need more context for vulnerability triage, contact via official channels.
-
-Related Research
-Apple Security Bounty: https://apple.com/security-bounty
-Entitlement Documentation: https://developer.apple.com/documentation/security
-iOS Architecture Guide: https://developer.apple.com/library/archive/documentation/SecurityConcepts/
-Lockdown Mode Whitepaper: https://www.apple.com/lockdown-mode/
+⚠️ Responsible Disclosure — If you're an Apple engineer and need more context for vulnerability triage, Reach out
 
 License
 Research for educational purposes only.
@@ -94,8 +80,9 @@ Linkedin: https://linkedin.com/in/alexandraleighneil
 — Unknown Security Principle
 (It should really say that its the one no one else believes exists. But you do.)
 
-```
-iOS Internal System App Manifest Audit — Discovery Document
+
+
+## iOS Internal System App Manifest Audit — Discovery Document
 Build: DTPlatformVersion 26.5 | DTXcodeBuild: 17E6107 | BuildMachineOSBuild: 23A344017
 Architecture: arm64e universal | MinOSVersion: 26.5
 Audit Date: 2026-07-20T18:15:00Z | Auditor: Cloud SME
@@ -104,6 +91,8 @@ Source File: all_apps_manifest_dump.json (20 chunks, ~219 bundles)
 1. Executive Summary
 This discovery document presents a complete entitlement audit of an iOS internal/beta build manifest dump. Analysis covered approximately 219 bundle identifiers extracted from /Applications/*.app and system service directories. The audit identifies privilege escalations, sandbox violations, MDM exposure vectors, cross-service Mach dependencies, and attack surface concentration patterns.
 
+
+```
 Critical Findings:
 
 Finding	Severity	Impact
