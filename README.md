@@ -4,6 +4,8 @@ Heres Why.
 
 This repository contains the results of a comprehensive security audit on my iPhone. Ive known its been having a severe security issue but, getting folks to quite believe or understand that has been, lets say, difficult. Manifest should be enough to indicate why. included initially, is a list of every app included, extracted all entitlements, and mapped privilege hierarchies to identify the most dangerous attack surfaces on the platform. Which as I add on, will include more items.
 
+As things are added, or may already be apparent, there are exploits happening on an iPhone SE, and a broken iPhone Air (Long Story) that are sitting on my counter in a Faraday bag, that are worth a few million in Bug Bounty rewards if you want to quantify it in such a way.
+
 The worst offending Application: The Setup Assistant (purplebuddy) is more powerful than almost any other binary on iOS—it can install MDM profiles silently before the home screen loads, extract device private keys, and factory-wipe the device—all while running with zero sandbox containment. I am also working on a macOS Repository as that has a similar problem, and that application offender is Language Chooser as an FYI.
 
 Key Findings
