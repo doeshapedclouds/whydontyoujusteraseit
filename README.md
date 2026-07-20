@@ -1,4 +1,96 @@
 # whydontyoujusteraseit
+
+Heres Why.
+
+This repository contains the results of a comprehensive security audit on my iPhone. Ive known its been having a severe security issue but, getting folks to quite believe or understand that has been, lets say, difficult. Manifest should be enough to indicate why. included initially, is a list of every app included, extracted all entitlements, and mapped privilege hierarchies to identify the most dangerous attack surfaces on the platform. Which as I add on, will include more items.
+
+The worst offending Application: The Setup Assistant (purplebuddy) is more powerful than almost any other binary on iOS—it can install MDM profiles silently before the home screen loads, extract device private keys, and factory-wipe the device—all while running with zero sandbox containment. I am also working on a macOS Repository as that has a similar problem, and that application offender is Language Chooser as an FYI.
+
+Key Findings
+Metric	Value	Significance
+Total Bundles Audited	219	Complete system coverage
+No-Sandbox Apps	9	4% of system apps bypass container isolation
+Lockdown Key Access	3 apps	Can read DevicePrivateKey / ActivationPrivateKey
+MDM Profile Control	7 apps	Can install/remove profiles via daemon
+Network Extension Types	2 apps	Full VPN tunnel + content filter + proxy stack
+StormBreaker Telecom	5 apps	Cellular modem SPI bypass
+OpenAI Keychain	2 apps	Access to GenAI credentials
+TCC Manager Access	2 apps	Can read ALL privacy permissions
+
+
+Most Dangerous Apps (Top 5)
+1. Setup (purplebuddy)     — DEFCON 1 — 247 entitlements, no-sandbox, wipedevice, key extraction
+2. Photos                  — kernel.panic capability + device certificate access
+3. Preferences             — boot-args modification + lockdown mode control
+4. Shortcuts               — All 3 network extension types + OpenAI keychain
+5. Siri                    — Read ALL TCC permissions + process termination + endowment originator
+
+
+Attack Vectors Identified
+Critical Risk (Immediate Exploitation Possible)
+
+Vector	Mechanism	Impact
+First-Boot Persistence	Setup Assistant installs DEP profiles silently	Full device control before home screen
+Background Surveillance	SystemActions records internal + external audio	Continuous audio monitoring
+Traffic Interception	Shortcuts + SystemActions = complete VPN stack	All network traffic exposed
+Privacy Permission Mapping	Siri can read ALL TCC entries	Attack surface reconnaissance
+Cryptographic Identity Theft	Setup/Mail/Photos can extract device private keys	Impersonation, certificate theft
+High Risk (Secondary Exploitation)
+Vector	Mechanism	Impact
+Cellular Plan Modification	StormBreaker entitlement on 5 apps	Carrier-level control
+App Debugging	Sidecar can debug any application	Memory inspection, credential extraction
+Clipboard Sniffing	SystemActions background pasteboard	Password/token theft
+Kernel Panic Weaponization	Photos can crash the kernel	Denial-of-service, potential escape
+
+
+Who Should Care?
+
+Audience	Why This Matters
+Security Researchers	Privilege escalation paths documented; exploit chain targets identified
+Enterprise IT	MDM profile installation vulnerabilities; DEP enrollment bypass vectors
+iOS Developers	Entitlement scope creep; least-privilege violations in system apps
+Privacy Advocates	Background surveillance capabilities; permission visibility leaks
+Apple Engineers	Attack surface review; entitlement minimization opportunities
+
+
+Methodology Snapshot (**Currently, this is only a breakdown of the First Chunk & Manifest.plist
+
+Chunked Parsing — Manifest split into 20 parts (~219 bundles total)
+Entitlement Extraction — Every privilege flag, keychain group, Mach service logged
+Risk Scoring — Tiered classification (Tier 0-4) based on impact severity
+Dependency Mapping — Service-to-service relationships visualized
+Cross-Correlation — Entitlements cross-referenced against known CVEs and vulnerability registries
+
+Limitations & Disclaimers
+⚠️ Internal Build Data — This manifest is from an iOS 26.5 internal/beta build. Entitlements may differ in production releases.
+
+⚠️ Static Analysis Only — No dynamic testing performed. Actual exploit feasibility requires runtime validation.
+
+⚠️ No Harmful Code Provided — This is research documentation only. No exploit payloads included.
+
+⚠️ Responsible Disclosure — If you're an Apple engineer and need more context for vulnerability triage, contact via official channels.
+
+Related Research
+Apple Security Bounty: https://apple.com/security-bounty
+Entitlement Documentation: https://developer.apple.com/documentation/security
+iOS Architecture Guide: https://developer.apple.com/library/archive/documentation/SecurityConcepts/
+Lockdown Mode Whitepaper: https://www.apple.com/lockdown-mode/
+
+License
+Research for educational purposes only.
+No warranty expressed or implied.
+Use at your own risk. Because ive already dealt with a lot and im tired.
+
+
+© 2026 Alexis Neil / doeshapedclouds
+Contact
+GitHub: @doeshapedclouds
+Linkedin: https://linkedin.com/in/alexandraleighneil
+
+"The most dangerous privilege is the one you don't know exists."
+— Unknown Security Principle
+(It should really say that its the one no one else believes exists. But you do.)
+
 ```
 iOS Internal System App Manifest Audit — Discovery Document
 Build: DTPlatformVersion 26.5 | DTXcodeBuild: 17E6107 | BuildMachineOSBuild: 23A344017
