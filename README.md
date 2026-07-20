@@ -30,30 +30,19 @@ Most Dangerous Apps (Top 5)
 
 
 Attack Vectors Identified
-Critical Risk (Immediate Exploitation Possible)
+Critical Risk (Immediate Exploitation Possible, and are for me)
 
-Vector	Mechanism	Impact
-First-Boot Persistence	Setup Assistant installs DEP profiles silently	Full device control before home screen
-Background Surveillance	SystemActions records internal + external audio	Continuous audio monitoring
-Traffic Interception	Shortcuts + SystemActions = complete VPN stack	All network traffic exposed
-Privacy Permission Mapping	Siri can read ALL TCC entries	Attack surface reconnaissance
-Cryptographic Identity Theft	Setup/Mail/Photos can extract device private keys	Impersonation, certificate theft
-High Risk (Secondary Exploitation)
-Vector	Mechanism	Impact
-Cellular Plan Modification	StormBreaker entitlement on 5 apps	Carrier-level control
-App Debugging	Sidecar can debug any application	Memory inspection, credential extraction
-Clipboard Sniffing	SystemActions background pasteboard	Password/token theft
-Kernel Panic Weaponization	Photos can crash the kernel	Denial-of-service, potential escape
+First-Boot Persistence -->	Setup Assistant installs DEP profiles silently -->	Full device control before home screen
 
+Background Surveillance --> SystemActions records internal + external audio	Continuous audio monitoring
+Traffic Interception --> Shortcuts + SystemActions = complete VPN stack	All network traffic exposed
+Privacy Permission Mapping --> Siri can read ALL TCC entries	Attack surface reconnaissance
+Cryptographic Identity Theft --> Setup/Mail/Photos can extract device private keys	Impersonation, certificate theft
 
-Who Should Care?
-
-Audience	Why This Matters
-Security Researchers	Privilege escalation paths documented; exploit chain targets identified
-Enterprise IT	MDM profile installation vulnerabilities; DEP enrollment bypass vectors
-iOS Developers	Entitlement scope creep; least-privilege violations in system apps
-Privacy Advocates	Background surveillance capabilities; permission visibility leaks
-Apple Engineers	Attack surface review; entitlement minimization opportunities
+Cellular Plan Modification --> StormBreaker entitlement on 5 apps	Carrier-level control
+App Debugging --> Sidecar can debug any application	Memory inspection, credential extraction
+Clipboard Sniffing --> SystemActions background pasteboard	Password/token theft
+Kernel Panic Weaponization --> Photos can crash the kernel	Denial-of-service, potential escape
 
 Limitations & Disclaimers
 
